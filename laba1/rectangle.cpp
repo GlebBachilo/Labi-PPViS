@@ -3,6 +3,12 @@
 
 
 
+Rectangle::Rectangle()	{
+
+	lenth = 0;
+	height = 0;
+	}
+
 Rectangle::Rectangle(Point A, int lenth, int height) {
 		this->A = A;
 		this->lenth = lenth;
@@ -17,6 +23,16 @@ int Rectangle::get_Lenth()
 int Rectangle::get_Height()
 {
 	return height;
+}
+
+void Rectangle::set_Lenth(int lenth)
+{
+	this->lenth = lenth;
+}
+
+void Rectangle::set_Height(int height)
+{
+	this->height = height;
 }
 
 Point Rectangle::get_A()
@@ -80,7 +96,7 @@ Point Rectangle::get_D()
 
 	int Rectangle::max_x()
 	{
-		return A.get_Y() + height;
+		return A.get_X() + height;
 	}
 
 	int Rectangle::min_y()
@@ -92,6 +108,7 @@ Point Rectangle::get_D()
 	{
 		return A.get_X();
 	}
+
 
 	Rectangle& Rectangle::operator+(Rectangle anotherRectangle)
 	{
@@ -108,5 +125,8 @@ Point Rectangle::get_D()
 		return  *this = *this + anotherRectangle;
 	}
 
-
-
+	std::ostream& operator<<(std::ostream& out, const Point& p)
+	{
+		cout <<" Point :("<<p.x<<","<<p.y<<")"<<endl;
+		return out;
+	}

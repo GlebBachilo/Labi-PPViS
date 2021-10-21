@@ -28,7 +28,3 @@ void Point::set_Y(int y)
 	this->y = y;
 }
 
-
-
-
-

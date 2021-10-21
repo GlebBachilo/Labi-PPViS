@@ -20,4 +20,5 @@ public:
 
 	int get_Y();
 	void set_Y(int y);
+	friend std::ostream& operator<<(std::ostream& out, const Point& p);
 };

@@ -5,54 +5,23 @@
 #include <cstdlib>
 #include <ctime>
 #include <math.h>
-#include"Point.h";
+#include"Point.h"
 
 using namespace std;
-//class Point {
-//private:
-//	int x;
-//	int	y;
-//public:
-//	Point() {};
-//	Point(int x, int y) {
-//		this->x = x;
-//		this->y = y;
-//	}
-//
-//	int get_X() {
-//		return x;
-//	}
-//
-//	void set_X(int x) {
-//		this->x = x;
-//	}
-//
-//	int get_Y() {
-//		return y;
-//	}
-//
-//	void set_Y(int y) {
-//		this->y = y;
-//	}
-//
-//
-//};
+
 class Rectangle :public Point {
 private:
 	Point A;
 	int lenth;
 	int height;
 public:
-
+	Rectangle();
 	Rectangle(Point A, int lenth, int height);
 
 	int get_Lenth();
 	int get_Height();
-
-	Point get_A();
-	Point get_B();
-	Point get_C();
-	Point get_D();
+	void set_Lenth(int lenth);
+	void set_Height(int height);
 
 	void reSize(int delLenth, int delHeight);
 	void replace(int delX, int delY);
@@ -63,13 +32,17 @@ public:
 	Rectangle& operator++(int d);
 	Rectangle& operator--(int d);
 
-	//Rectangle& operator-(Rectangle anotherRectangle);
-	//Rectangle& operator-=(Rectangle anotherRectangle);
+	
 
 	int max_y();
 	int max_x();
 	int min_y();
 	int min_x();
+
+	Point get_A();
+	Point get_B();
+	Point get_C();
+	Point get_D();
 
 	Rectangle& operator+(Rectangle anotherRectangle);
 	Rectangle& operator+=(Rectangle anotherRectangle);
