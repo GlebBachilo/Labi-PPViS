@@ -24,8 +24,8 @@ namespace UnitTest1
 		}
 		TEST_METHOD(GetPointConstructorTests) {
 
-			Assert::IsFalse(p1.get_X() == 1);
-			Assert::IsFalse(p1.get_Y() == 3);
+			Assert::IsFalse(p2.get_X() == 3);
+			Assert::IsFalse(p2.get_Y() == 5);
 		}
 		TEST_METHOD(SetPointTests) {
 
@@ -40,18 +40,19 @@ namespace UnitTest1
 	public:
 
 		Rectangle rect = Rectangle(Point(0,2),4,5);
+		Rectangle rect1 = Rectangle();
 
 		TEST_METHOD(RectangleTargetConstructorTests) {
 
-			Assert::IsTrue(rect.get_X() != 0 && rect.get_Y() != 0);
-			Assert::IsTrue(rect.get_Height() != 0);
-			Assert::IsTrue(rect.get_Lenth() != 0);
+			Assert::IsFalse(rect.get_X() == 1 && rect.get_Y() == 0);
+			Assert::IsFalse(rect.get_Height() == 0);
+			Assert::IsFalse(rect.get_Lenth() == 0);
 		}
 		TEST_METHOD(RectangleEmptyConstructorTests) {
 
-			Assert::IsTrue(rect.get_X() == 0 && rect.get_Y() == 0);
-			Assert::IsTrue(rect.get_Height() == 0);
-			Assert::IsTrue(rect.get_Lenth() == 0);
+			Assert::IsTrue(rect1.get_X() == 0 && rect.get_Y() == 0);
+			Assert::IsTrue(rect1.get_Height() == 0);
+			Assert::IsTrue(rect1.get_Lenth() == 0);
 		}
 		TEST_METHOD(HeightAndLenthTests) {
 
@@ -175,24 +176,28 @@ namespace UnitTest1
 
 			Point A(0, 2);
 			Assert::IsTrue(A.get_X() == 0);
+			Assert::IsTrue(A.get_Y() == 2);
 		}
 
 		TEST_METHOD(Point_B) {
 
 			Point B(4, 2);
 			Assert::IsTrue(B.get_X() == 4);
+			Assert::IsTrue(B.get_Y() == 2);
 		}
 
 		TEST_METHOD(Point_C) {
 
 			Point C(4, -3);
 			Assert::IsTrue(C.get_Y() == -3);
+			Assert::IsTrue(C.get_X() == 4);
 		}
 
 		TEST_METHOD(Point_D) {
 
 			Point D(0, -3);
 			Assert::IsTrue(D.get_X() == 0);
+			Assert::IsTrue(D.get_Y() == -3);
 		}
 
 	};
